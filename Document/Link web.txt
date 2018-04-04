@@ -1,0 +1,34 @@
+***
+	https://jaredrhodes.com/2018/01/01/creating-an-asp-net-core-application-for-raspberry-pi/
+	https://blogs.msdn.microsoft.com/david/2017/07/20/setting_up_raspian_and_dotnet_core_2_0_on_a_raspberry_pi/
+	https://carlos.mendible.com/2017/03/21/step-by-step-running-aspnet-core-on-raspberry-pi/
+***
+	https://jeremylindsayni.wordpress.com/2017/05/01/controlling-gpio-pins-using-a-net-core-2-webapi-on-a-raspberry-pi-using-windows-10-or-ubuntu/
+	https://jeremylindsayni.wordpress.com/2017/04/22/hosting-a-net-core-2-web-api-instance-on-the-raspberry-pi-3/
+***
+	https://docs.dataplicity.com/docs/control-gpios-using-rest-api
+*** RFID Rasp
+	http://www.instructables.com/id/RFID-RC522-Raspberry-Pi/
+	https://pimylifeup.com/raspberry-pi-rfid-rc522/
+*** RFID ESP
+	https://github.com/miguelbalboa/rfid
+	http://www.instructables.com/id/WiFi-RFID-Reader/
+**
+	https://www.jeremymorgan.com/tutorials/python-tutorials/how-to-rest-api-python/
+*** GET/POST Request
+	https://techtutorialsx.com/2016/07/21/esp8266-post-requests/
+	https://techtutorialsx.com/2016/07/17/esp8266-http-get-requests/
+	https://arduinojson.org/doc/
+	https://arduinojson.org/api/jsonarray/createnestedobject/
+	https://kenhlaptrinh.net/lay-du-lieu-tu-mang-doi-tuong-json-json-array/
+	https://techtutorialsx.com/2016/08/10/esp8266-encoding-json-messages/
+	https://arduinojson.org/assistant/
+	https://diyprojects.io/esp8266-web-server-part-4-arduinojson-load-save-files-spiffs/#.Wrdw7h977IU
+	https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h#L45
+****
+	How to Make Raspberry Pi Webcam Server and Stream Live Video || Motion + Webcam + Raspberry Pi: 8 Steps (with Pictures)
+*** Deloy to mitaka
+	https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/?tabs=aspnetcore2x
+	https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?tabs=aspnetcore2x
+	https://phongdl.uit.edu.vn/huong-dan-su-dung-openstack-cho-nguoi-dung-cuoi
+	https://blog.todotnet.com/2017/07/publishing-and-running-your-asp-net-core-project-on-linux/

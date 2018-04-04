@@ -1,0 +1,10 @@
+1. ASP.NET Framework
+	https://vi.wikipedia.org/wiki/.NET_Framework#L%E1%BB%8Bch_s%E1%BB%AD_ph%C3%A1t_tri%E1%BB%83n
+2. ASP.NET Core
+	https://en.wikipedia.org/wiki/ASP.NET_Core
+3. NodeJS
+	https://nodejs.org/en/
+4. ESP8266
+	https://arduino.esp8266.vn/
+5. Ngrok
+	https://viblo.asia/p/tooling-gioi-thieu-ngrok-mang-demo-du-an-web-len-internet-khong-can-deploy-naQZR7eqlvx
