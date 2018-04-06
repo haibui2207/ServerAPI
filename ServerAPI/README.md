@@ -7,8 +7,9 @@
 
 **
 
+----------
 ## # PinController :http://localhost:xxxxx/api/pin <br/>
-> <br/>
+----------
 >PinModel <br/> 
 
     {
@@ -36,7 +37,7 @@ BODY: <br/>
 
 ----------
 ## # UserController :http://localhost:xxxxx/api/user <br/>
-> <br/>
+----------
 >PinModel <br/>
 
     { 
@@ -54,8 +55,8 @@ Method : GET <br/>
 Method : POST <br/>
 BODY: <br/>
 	{ 
-		"name": "ABC", <br/>
-		"rfid": "CODE" <br/>
+		"name": "ABC",
+		"rfid": "CODE"
 	} 
  
 ### #REMOVE A USER <br/>
