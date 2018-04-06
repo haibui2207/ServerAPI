@@ -54,6 +54,7 @@ Method : GET <br/>
 >URL : http://localhost:xxxxx/api/user <br/>
 Method : POST <br/>
 BODY: <br/>
+
 	{ 
 		"name": "ABC",
 		"rfid": "CODE"
