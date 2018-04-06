@@ -1,70 +1,65 @@
 
-# TUTORIAL USING SERVER API
+# TUTORIAL USING SERVER API <br/>
 **
 
-> TEST USING POSTMAN
+> TEST USING POSTMAN <br/>
 
 **
 
-## # PinController :http://localhost:xxxxx/api/pin
->
->PinModel
+## # PinController :http://localhost:xxxxx/api/pin <br/>
+> <br/>
+>PinModel <br/> 
 >{
-	int pin; // 1 to 20
-	int state;  // 0 or 1 default 0
->}
+	int pin; // 1 to 20 <br/>
+	int state;  // 0 or 1 default 0 <br/>
+>} <br/>
 
-### # GET ALL
->URL : http://localhost:xxxxx/api/pin
-Method : GET
+### # GET ALL <br/>
+>URL : http://localhost:xxxxx/api/pin <br/>
+Method : GET <br/>
 
-### #GET A PIN ( example pin = 15 )
->URL : http://localhost:xxxxx/api/pin/15
-Method : GET
+### #GET A PIN ( example pin = 15 ) <br/>
+>URL : http://localhost:xxxxx/api/pin/15 <br/>
+Method : GET <br/>
 
-### #CHANGE STATE OF PIN
-### 
->URL : http://localhost:xxxxx/api/pin
-Method : POST
-BODY:
-{
-	"pin": 16,
-	"state": 1
-}
+### #CHANGE STATE OF PIN <br/>
+>URL : http://localhost:xxxxx/api/pin <br/>
+Method : POST <br/>
+BODY: <br/>
+{ <br/>
+	"pin": 16, <br/>
+	"state": 1 <br/>
+} <br/>
 
 
 ----------
-## # UserController :http://localhost:xxxxx/api/user
->
->PinModel
->{
-	int id;
-	string name;
-	string rfid;
->}
+## # UserController :http://localhost:xxxxx/api/user <br/>
+> <br/>
+>PinModel <br/>
+>{ <br/>
+	int id; <br/>
+	string name; <br/>
+	string rfid; <br/>
+>} <br/>
 
-### # GET A User Using RFID Code
->URL : http://localhost:xxxxx/api/user/{RFID Code}
-Method : GET
+### # GET A User Using RFID Code <br/>
+>URL : http://localhost:xxxxx/api/user/{RFID Code} <br/>
+Method : GET <br/>
 
-### #ADD NEW USER
-### 
->URL : http://localhost:xxxxx/api/user
-Method : POST
-BODY:
-{
-	"name": "ABC",
-	"rfid": "CODE"
-}
-
-### #REMOVE A USER
-### 
->URL : http://localhost:xxxxx/api/user
-Method : DELETE
-BODY:
-{
-	"name": "ABC",
-	"rfid": "CODE"
-}
-
-
+### #ADD NEW USER <br/>
+>URL : http://localhost:xxxxx/api/user <br/>
+Method : POST <br/>
+BODY: <br/>
+{ <br/>
+	"name": "ABC", <br/>
+	"rfid": "CODE" <br/>
+} <br/>
+ 
+### #REMOVE A USER <br/>
+>URL : http://localhost:xxxxx/api/user <br/>
+Method : DELETE <br/>
+BODY: <br/>
+{ <br/>
+	"name": "ABC", <br/>
+	"rfid": "CODE" <br/>
+} <br/>
