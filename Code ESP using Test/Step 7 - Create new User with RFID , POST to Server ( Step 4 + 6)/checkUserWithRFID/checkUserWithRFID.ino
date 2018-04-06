@@ -18,7 +18,7 @@
   String startRFID()
 */
 /*
-  SS 15
+  SDA(SS) 15
   SCK 14
   MOSI 13
   MISO 12
@@ -30,7 +30,7 @@
  
 const char* ssid = SSID;
 const char* password = WPA_KEY;
-String host = HOST;
+const char* host = HOST;
 int pin = 16;
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
@@ -39,11 +39,11 @@ void setup() {
   pinMode(pin,OUTPUT);
   //Set Baurate
   Serial.begin(115200);  
-  setupWifi();  
+  setupWifi(ssid,password);  
   setup_rfid(); 
 }
 
-void setupWifi(){
+void setupWifi(const char* ssid,const char* password){
   Serial.println();
   Serial.print("Connecting to ");                             
   Serial.println(ssid);
@@ -122,14 +122,14 @@ JsonObject& getIndexAtJsonArray(String data , int index){
   return obj;
 }
 
-String getHttpRespone(String url){
+String getHttpRespone(String URL){
   String data; 
   Serial.print("Connecting to host: ");
-  Serial.println(url); 
+  Serial.println(URL); 
   HTTPClient http;  
-  http.begin(host);  
+  http.begin(URL);  
   int httpCode = http.GET();    
-//  Serial.print("GET Respone Code : ");                                               
+//  Serial.print("GET Respone Code : ");                                              
 //  Serial.println(httpCode);
   if (httpCode > 0) {         
     data = http.getString();        
@@ -138,9 +138,9 @@ String getHttpRespone(String url){
   return data;
 }
 
-void postData(String url,String data){
+void postData(const char* host,String data){
   HTTPClient http;  
-  http.begin(url);
+  http.begin(host);
   http.addHeader("Content-Type", "application/json");
   int httpCode = http.POST(data);   
   String payload = http.getString();  
@@ -165,7 +165,7 @@ String dump_byte_array(byte *buffer, byte bufferSize) {
   return content;
 }
 
-String startRFID(){  
+String startRFID(byte *buffer, byte bufferSize){  
   if ( ! mfrc522.PICC_IsNewCardPresent()) {
     return "";
   }
@@ -173,7 +173,7 @@ String startRFID(){
     return "";
   }
   Serial.print(F("Card UID:"));
-  String content = dump_byte_array(mfrc522.uid.uidByte, mfrc522.uid.size);
+  String content = dump_byte_array(buffer,bufferSize);
   Serial.println();
   return content;
 }
@@ -181,7 +181,7 @@ String startRFID(){
 void loop() { 
   if (WiFi.status() == WL_CONNECTED) 
   {         
-    String rfid_content = startRFID();  
+    String rfid_content = startRFID(mfrc522.uid.uidByte,mfrc522.uid.size);  
     if(rfid_content == "") {
       digitalWrite(pin, HIGH);
       delay(2000); //important
@@ -190,11 +190,12 @@ void loop() {
     Serial.print("RFID content : ");
     Serial.println(rfid_content);
 
-    //GET  
-    host.concat(rfid_content);
+    //GET 
+    String URL = String(host); 
+    URL.concat(rfid_content);
     Serial.print("URL : ");
-    Serial.println(host);
-    String data = getHttpRespone(host); 
+    Serial.println(URL);
+    String data = getHttpRespone(URL); 
     if(data == ""){
       Serial.println("No data response");
       delay(2000);
@@ -217,7 +218,7 @@ void loop() {
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");    
-    setupWifi();
+    setupWifi(ssid,password);  
   }   
 }
 

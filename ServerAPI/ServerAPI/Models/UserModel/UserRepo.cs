@@ -14,36 +14,22 @@ namespace ServerAPI.Models.UserModel
             Add(new User("Trung Duyen", "27a5a059"));
         }
 
-        public bool Add(User newUser)
+        public User Add(User newUser)
         {
-            try
-            {
-                newUser.id = _nextID;
-                _nextID++;
-                listData.Add(newUser);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            newUser.id = _nextID;
+            _nextID++;
+            listData.Add(newUser);
+            return newUser;
         }
 
-        public bool Remove(User removeUser)
+        public User Remove(User removeUser)
         {
-            try
-            {
-                int index = listData.FindIndex(
-                    item => item.name == removeUser.name 
-                            && item.RFID == removeUser.RFID
-                            );
-                listData.RemoveAt(index);
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            int index = listData.FindIndex(
+                item => item.name == removeUser.name
+                        && item.RFID == removeUser.RFID
+            );
+            listData.RemoveAt(index);
+            return removeUser;
         }
 
         public User GetDataByRFID(string RFID)

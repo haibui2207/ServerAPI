@@ -39,8 +39,8 @@ namespace ServerAPI.Controllers
                     return BadRequest();
                 }
 
-                bool check = repository.Add(newUser);
-                if (check) return Ok("Add User Successed.");
+                User addedUser= repository.Add(newUser);
+                if (addedUser != null) return Ok("Add User Successed.");
                 else return BadRequest();
             }
             catch (Exception e)
@@ -51,17 +51,17 @@ namespace ServerAPI.Controllers
 
         // POST api/User
         [HttpDelete]
-        public IActionResult Delete([FromBody] User removedUser)
+        public IActionResult Delete([FromBody] User deletedUser)
         {
             try
             {
-                if (removedUser.name == null || removedUser.RFID == null)
+                if (deletedUser.name == null || deletedUser.RFID == null)
                 {
                     return BadRequest();
                 }
 
-                bool check = repository.Remove(removedUser);
-                if (check) return Ok("Delete User Successed.");
+                User removedUser = repository.Remove(deletedUser);
+                if (removedUser != null) return Ok("Delete User Successed.");
                 else return BadRequest();
             }
             catch (Exception e)

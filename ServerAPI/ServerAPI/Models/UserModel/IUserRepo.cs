@@ -2,8 +2,8 @@
 {
     interface IUserRepo
     {
-        bool Add(User dt);
-        bool Remove(User dt);
+        User Add(User dt);
+        User Remove(User dt);
         User GetDataByRFID(string RFID);
     }
 }
