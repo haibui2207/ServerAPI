@@ -22,10 +22,10 @@ void setup() {
   pinMode(pin,OUTPUT);
   //Set Baurate
   Serial.begin(115200);  
-  setupWifi();  
+  setup_wifi(ssid,password);    
 }
 
-void setupWifi(){
+void setup_wifi(const char* ssid,const char* password){
   Serial.println();
   Serial.print("Connecting to ");                             
   Serial.println(ssid);
@@ -155,7 +155,7 @@ void loop() {
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");    
-    setupWifi();
+    setup_wifi(ssid,password);    
   }   
 }
 

@@ -11,11 +11,11 @@ String host = HOST;
 void setup() {
  
   Serial.begin(115200);                                  //Serial connection
-  setup_wifi();    
+  setup_wifi(ssid,password);    
 }
 
 //SETUP WIFI
-void setup_wifi(){
+void setup_wifi(const char* ssid ,const char* password){
   Serial.println();
   Serial.print("Connecting to ");                                         //Print Serial monitoring
   Serial.println(ssid);
@@ -77,6 +77,6 @@ void loop() {
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");    
-    setup_wifi();  
+    setup_wifi(ssid,password);    
   }     
 }
