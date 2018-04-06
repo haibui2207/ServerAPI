@@ -9,9 +9,9 @@
 ## # PinController :http://localhost:xxxxx/api/pin <br/>
 > <br/>
 >PinModel <br/> 
->{
-	int pin; // 1 to 20 <br/>
-	int state;  // 0 or 1 default 0 <br/>
+>{ <br/>
+	int pin; // 1 to 20 
+	int state;  // 0 or 1 default 0 
 >} <br/>
 
 ### # GET ALL <br/>
