@@ -21,12 +21,12 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
 
 void setup() {
   Serial.begin(115200);   // Initialize serial communications with the PC   
-  setup_wifi(ssid,password);  
-  start_rfid(); 
+  setupWifi(ssid,password);  
+  startRfid(); 
 }
 
 //SETUP WIFI
-void setup_wifi(const char* ssid,const char* password){
+void setupWifi(const char* ssid,const char* password){
   Serial.println();
   Serial.print("Connecting to ");                                         //Print Serial monitoring
   Serial.println(ssid);
@@ -45,7 +45,7 @@ void setup_wifi(const char* ssid,const char* password){
   Serial.println(WiFi.localIP());       
 }
 
-void start_rfid(){
+void startRfid(){
   SPI.begin();      
   mfrc522.PCD_Init();   
   mfrc522.PCD_DumpVersionToSerial();  
@@ -83,7 +83,7 @@ void loop() {
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");   
-    setup_wifi(ssid,password);  
+    setupWifi(ssid,password);  
   }   
 }
 

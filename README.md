@@ -1,5 +1,6 @@
 
 
+
 # Tutorial
 ----------
 
@@ -14,6 +15,9 @@
 
 ![ESP8266](https://arduino.esp8266.vn/_images/Iot-wifi-uno-hw-pinout1.png)
 
+
+----------
+
 > **Some Softwares used include**
 
  - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
@@ -21,11 +25,15 @@
  - [Ngrok](https://ngrok.com/)
  - [PostMan](https://www.getpostman.com/)
 
+----------
+
 > **Knowledge**
 
  - [ASP.NET Core API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api)
  - Arduino Coding ( C/C++)
  - [Angular 5](https://angular.io/)
+
+----------
 
 > **Libraries**
 
@@ -34,3 +42,27 @@
  - [ArduinoJson](https://arduinojson.org/)
  - [SPI](https://www.arduino.cc/en/Reference/SPI)
  - [MFRC522](https://github.com/miguelbalboa/rfid)
+
+----------
+
+>**MAKE GPIO RIGHTWAY ON THIS BOARD** 
+
+ 1. RFID
+
+| NAME | GPIO |
+|--|--|
+| SDA/SS | 15 |
+| SCK | 14 |
+| MOSI | 13 |
+| MISO | 12 |
+| RST | 2 |
+
+ 2. OLED
+ 
+| NAME | GPIO |
+|--|--|
+| SDA | 4 |
+| SCL | 5 |
+
+----------
+

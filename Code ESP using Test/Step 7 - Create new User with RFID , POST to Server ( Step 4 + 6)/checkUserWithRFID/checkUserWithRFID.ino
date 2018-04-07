@@ -4,6 +4,9 @@
 #include <ArduinoJson.h>
 #include <SPI.h>
 #include "MFRC522.h"
+#include <Adafruit_NeoPixel.h>
+#include "SSD1306.h"
+#include "Wire.h"
 
 /*
     ////////////////////////////////////////////
@@ -27,17 +30,28 @@
 const char* ssid = SSID;
 const char* password = WPA_KEY;
 const char* host = HOST;
-int pin = 16;
+int pin = 10;
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
+SSD1306  display(0x3c, 4, 5);
 
 /************************************************ SETUP ************************************************/
 void setup() {  
   pinMode(pin,OUTPUT);
   //Set Baurate
   Serial.begin(115200);  
-  setupWifi(ssid,password);  
-  setup_rfid(); 
+  setupWifi(ssid,password);
+  setupOled();  
+  setupRfid();   
+}
+
+/************************************************SETUP OLED************************************************/
+void setupOled(){
+  display.init();
+  display.flipScreenVertically();
+  display.setFont(ArialMT_Plain_10);
+  display.drawString(35, 25, "WELCOME"); 
+  display.display();                           
 }
 
 /************************************************SETUP WIFI************************************************/
@@ -151,7 +165,7 @@ void postData(const char* host,String data){
 }
 
 /************************************************SETUP RFID************************************************/
-void setup_rfid(){
+void setupRfid(){
   SPI.begin();      
   mfrc522.PCD_Init();   
   mfrc522.PCD_DumpVersionToSerial();  
@@ -188,7 +202,10 @@ void loop() {
   {         
     String rfid_content = startRFID();  
     if(rfid_content == "") {
-      digitalWrite(pin, HIGH);
+      display.clear();
+      display.drawString(35, 25, "WELCOME"); 
+      display.display();    
+      digitalWrite(pin, LOW);
       delay(2000); //important
       return;
     }
@@ -214,9 +231,16 @@ void loop() {
       String username = control["name"];
       Serial.print("USER : ");
       Serial.println(username);
-      digitalWrite(pin, LOW);
+      digitalWrite(pin, HIGH);
+      //SHOW OLED
+      display.clear();  
+      display.drawString(35, 15, "WELCOME");    
+      display.drawString(35, 35, String(username));      
+      display.display();       
     }
     else{
+      display.clear();
+      display.drawString(35, 10, "WRONG CARD");
       Serial.println("Invalid USER");
     }  
     delay(5000);
@@ -226,4 +250,5 @@ void loop() {
     setupWifi(ssid,password);  
   }   
 }
+
 

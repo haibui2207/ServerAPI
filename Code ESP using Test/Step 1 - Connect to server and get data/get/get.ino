@@ -9,11 +9,11 @@ String host = HOST;
 void setup() {  
   //Set Baurate
   Serial.begin(115200);  
-  setup_wifi(ssid,password);  
+  setupWifi(ssid,password);  
 }
 
 //SETUP WIFI
-void setup_wifi(const char* ssid,const char* password){
+void setupWifi(const char* ssid,const char* password){
   Serial.println();
   Serial.print("Connecting to ");                             
   Serial.println(ssid);
@@ -55,7 +55,7 @@ void loop() {
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");
-    setup_wifi(ssid,password);     
+    setupWifi(ssid,password);  
   }   
 }
 
