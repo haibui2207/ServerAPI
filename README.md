@@ -1,6 +1,7 @@
 
 
 
+
 # Tutorial
 ----------
 
@@ -42,6 +43,10 @@
  - [ArduinoJson](https://arduinojson.org/)
  - [SPI](https://www.arduino.cc/en/Reference/SPI)
  - [MFRC522](https://github.com/miguelbalboa/rfid)
+ -  [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
+ - [SSD1306](https://github.com/ThingPulse/esp8266-oled-ssd1306)
+ - [Wire](https://github.com/PaulStoffregen/Wire)
+ - [Servo](https://github.com/arduino-libraries/Servo)
 
 ----------
 
