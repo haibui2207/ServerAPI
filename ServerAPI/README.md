@@ -17,9 +17,13 @@
     	int state;  // 0 or 1 default 0 
     } 
 
-### # GET ALL <br/>
+### # GET ALL PIN<br/>
 >URL : http://localhost:xxxxx/api/pin <br/>
 Method : GET <br/>
+
+### # RESET ALL PIN<br/>
+>URL : http://localhost:xxxxx/api/pin/resetallpin <br/>
+Method : POST <br/>
 
 ### #GET A PIN ( example pin = 15 ) <br/>
 >URL : http://localhost:xxxxx/api/pin/15 <br/>
@@ -31,7 +35,7 @@ Method : POST <br/>
 BODY: <br/>
 
     {     	
-	    "pin": 16, 
+        "pin": 16, 
     	"state": 1 
     } 
 

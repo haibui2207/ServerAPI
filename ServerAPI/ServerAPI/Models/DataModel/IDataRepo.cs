@@ -8,5 +8,6 @@ namespace ServerAPI.Models
         Data Add(Data dt);
         Data ChangData(Data dt);
         Data GetDataByPin(int pin);
+        bool ResetAllPin();
     }
 }

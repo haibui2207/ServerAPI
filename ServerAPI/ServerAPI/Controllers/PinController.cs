@@ -73,5 +73,22 @@ namespace ServerAPI.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("ResetAllPin")]
+        public IActionResult ResetAllPin()
+        {
+            try
+            {
+                bool check = repository.ResetAllPin();
+                if(check) return Ok("Reset all pin success!");
+                else return BadRequest("Error reset all pin");
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

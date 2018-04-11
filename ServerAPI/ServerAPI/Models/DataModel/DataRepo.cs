@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ServerAPI.Models
 {
@@ -49,6 +50,22 @@ namespace ServerAPI.Models
                 if (item.pin == data.pin) item.state = data.state; 
             }
             return data;
+        }
+
+        public bool ResetAllPin()
+        {
+            try
+            {
+                foreach (var item in listData)
+                {
+                    item.state = 0;
+                }
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public Data GetDataByPin(int pin)

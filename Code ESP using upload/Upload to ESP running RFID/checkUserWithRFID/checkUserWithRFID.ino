@@ -17,11 +17,16 @@
 */
 
 /*
-  SDA(SS) 15
-  SCK 14
-  MOSI 13
-  MISO 12
-  RST 2
+ RFID
+    SDA(SS) 15
+    SCK 14
+    MOSI 13
+    MISO 12
+    RST 2
+ LED 10
+ OLED
+    SCL 5
+    SDA 4
 */
 
 #define SS_PIN 15
@@ -29,7 +34,8 @@
  
 const char* ssid = SSID;
 const char* password = WPA_KEY;
-const char* host = HOST;
+const char* userAPI = USER_API;
+const char* pinAPI = PIN_API;
 int pin = 10;
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
@@ -153,9 +159,9 @@ String getHttpRespone(String URL){
 }
 
 /************************************************POSST DATA************************************************/
-void postData(const char* host,String data){
+void postData(const char* URL,String data){
   HTTPClient http;  
-  http.begin(host);
+  http.begin(URL);
   http.addHeader("Content-Type", "application/json");
   int httpCode = http.POST(data);   
   String payload = http.getString();  
@@ -213,13 +219,16 @@ void loop() {
     Serial.println(rfid_content);
 
     //GET 
-    String URL = String(host); 
+    String URL = String(userAPI); 
     URL.concat(rfid_content);
     Serial.print("URL : ");
     Serial.println(URL);
     String data = getHttpRespone(URL); 
     if(data == ""){
       Serial.println("No data response");
+      display.clear();
+      display.drawString(35, 25, "INVALID USER");
+      display.display();
       delay(2000);
       return;
     }
@@ -235,16 +244,25 @@ void loop() {
       //SHOW OLED
       display.clear();  
       display.drawString(35, 15, "WELCOME");    
-      display.drawString(35, 35, String(username));
+      display.drawString(35, 35, String(username));      
+      display.display();   
       
-      display.display();       
+      if(username == "Hai Bui"){
+        postData(pinAPI,"{\"pin\":4,\"state\":1}");
+        postData(pinAPI,"{\"pin\":5,\"state\":1}");     
+      }
+      if(username == "Trung Duyen"){
+        postData(pinAPI,"{\"pin\":14,\"state\":1}");
+        postData(pinAPI,"{\"pin\":15,\"state\":1}");     
+      }
     }
     else{
       display.clear();
-      display.drawString(35, 10, "WRONG CARD");
+      display.drawString(35, 25, "INVALID USER");
+      display.display();
       Serial.println("Invalid USER");
     }  
-    delay(5000);
+    delay(3000);
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");    
