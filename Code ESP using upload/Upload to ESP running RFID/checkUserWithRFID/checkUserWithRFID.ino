@@ -67,12 +67,12 @@ void loop() {
       startOled(35, 15, "WELCOME",35, 35, String(username));  
       
       if(username == "Hai Bui"){
-        postData(pinAPI,"{\"pin\":4,\"state\":1}");
-        postData(pinAPI,"{\"pin\":5,\"state\":1}");     
+        postData(pinAPI,"{\"pin\":4,\"state\":1}");     // On Led
+        postData(pinAPI,"{\"pin\":2,\"state\":1}");     // Open door
       }
       if(username == "Trung Duyen"){
-        postData(pinAPI,"{\"pin\":14,\"state\":1}");
-        postData(pinAPI,"{\"pin\":15,\"state\":1}");     
+        postData(pinAPI,"{\"pin\":14,\"state\":1}");    // On Bell
+        postData(pinAPI,"{\"pin\":2,\"state\":1}");     // Open door
       }
     }
     else{

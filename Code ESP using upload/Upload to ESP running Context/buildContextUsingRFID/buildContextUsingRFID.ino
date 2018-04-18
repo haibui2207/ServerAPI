@@ -1,6 +1,7 @@
 #include "wifi_info.h"
 #include "myHttpClient.h"
 #include "myServo.h"
+#include "myBell.h"
 
 /*
     ////////////////////////////////////////////
@@ -27,10 +28,16 @@ const char* host = PIN_API;
 
 Servo myServo;
 
+int haibui_pin4 = 4; //Led
+int trungduyen_pin14 = 14; //Bell
+int counter = 0;  //định thời cho bell
+bool isDoorOpen = false;
  
 /************************************************SETUP************************************************/
 void setup() { 
   setupServo(myServo,SERVO_PIN);  
+  pinMode(haibui_pin4,OUTPUT);
+  pinMode(trungduyen_pin14,OUTPUT);
   //Set Baurate
   Serial.begin(115200);  
   setupWifi(ssid,password);  
@@ -41,20 +48,39 @@ void setup() {
 void loop() { 
   if (WiFi.status() == WL_CONNECTED) 
   {       
-    //GET
     String data = getHttpRespone(host);
-//    displayStringAsJsonArray(data);
-    JsonObject& control = getIndexAtJsonArray(data , SERVO_PIN - 1); //array begin from 0
-    control.prettyPrintTo(Serial);
-    Serial.println();
+    Serial.println(data);
+    JsonObject& reponse_pin4 = getIndexAtJsonArray(data , haibui_pin4 - 1);  //Array from 0 so -1
+    JsonObject& reponse_pin14 = getIndexAtJsonArray(data , trungduyen_pin14 - 1); 
+    JsonObject& reponse_servo_pin = getIndexAtJsonArray(data , SERVO_PIN - 1); 
+    
+    int state_pin4 = reponse_pin4["state"];
+    int state_pin14 = reponse_pin14["state"];
+    int state_servo_pin = reponse_servo_pin["state"];
 
-    int state = control["state"];
-    if(state == 1) {
-      startServo(myServo);
+    if(state_servo_pin == 1){
+      isDoorOpen = openDoor(myServo);
+      postData(host,"{\"pin\":" + String(SERVO_PIN) + ",\"state\":0}");    // close door
+    }
+    
+    if(state_pin4 == 1){      
+      digitalWrite(haibui_pin4,HIGH); // ON LED
+    }
+    else {
+      digitalWrite(haibui_pin4,LOW);
+    }
+    
+    if(state_pin14 == 1) {
+      startBell(trungduyen_pin14,counter); // ON BELL
+      counter = (counter+1)%40;       
+    }
+    else {
+      counter = 0;
+      stopBell(trungduyen_pin14);
     }
 
-    delay(5000);   
-    
+    delay(2000); 
+    isDoorOpen = closeDoor(myServo,isDoorOpen);    // close door
   }
   else{
     Serial.println("Connect to server Failed. Reconnecting...");    
