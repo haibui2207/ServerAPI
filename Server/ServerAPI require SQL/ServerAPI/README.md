@@ -1,11 +1,27 @@
 
 
 # TUTORIAL USING SERVER API REQUIRE SQL<br/>
-**
+----------
 
-> TEST USING POSTMAN <br/>
+# > SETUP SQL <br/>
 
-**
+----------
+## Step 1 : Insert EntityCoreFramework and build Database
+Open Tools => NuGet Package Manager => Package Manager Console
+- Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 2.0.2
+- Install-Package Microsoft.EntityFrameworkCore.Tools
+- Update-Database
+
+## Step 2 : Insert data from file SeedData.cs
+You only run project after Step 1 it will auto insert data contain inside SeedData.cs into new created database and run only once first time.
+If step 1 skipped , perhaps throw error because no DB founded
+
+
+----------
+
+# > TEST USING POSTMAN <br/>
+
+----------
 
 ----------
 ## # PinController :http://localhost:xxxxx/api/pin <br/>
