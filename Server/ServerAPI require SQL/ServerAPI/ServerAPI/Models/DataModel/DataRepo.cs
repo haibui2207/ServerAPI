@@ -32,6 +32,8 @@ namespace ServerAPI.Models
             try
             {
                 await _context.AddAsync(data);
+                await _context.SaveChangesAsync();
+
                 return data;
             }
             catch(Exception e)

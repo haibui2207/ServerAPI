@@ -13,7 +13,7 @@ namespace ServerAPI.Models.UserModel
         [MaxLength(20)]
         public string name { get; set; }
         [Required]
-        [MaxLength(8)]
+        [StringLength(8)]
         public string RFID { get; set; }
 
         public User() { }

@@ -20,6 +20,7 @@ namespace ServerAPI.Models.UserModel
             try
             {
                 await _context.Users.AddAsync(newUser);
+                await _context.SaveChangesAsync();
                 return newUser;
             }
             catch(Exception e)
@@ -34,6 +35,8 @@ namespace ServerAPI.Models.UserModel
             {
                 var user = _context.Users.Single(item => item.name == removeUser.name && item.RFID == removeUser.RFID);
                 _context.Users.Remove(user);
+                _context.SaveChanges();
+
                 return user;
             }
             catch(Exception e)

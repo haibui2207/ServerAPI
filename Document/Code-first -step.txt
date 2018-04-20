@@ -1,0 +1,91 @@
+**Models folder => Create Model
+
+public class Artist
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }  
+
+**Create folder named "Context" => Configuring DbContext
+
+public class MusicStoreContextDbContext   
+{  
+     public MusicStoreContext(DbContextOptions<MusicStoreContext> options) : base(options) {}  
+    public DbSet < Artist> Artists{   get;  set; }  
+}  
+
+** appsettings.json => Add Info ConnectionString
+"ConnectionStrings": {
+        "MusicStoreContext": "Server=(localdb)\\mssqllocaldb;Database=MusicStoreContext;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+**Startup.cs  => Register context using this connectionString
+ public void ConfigureServices(IServiceCollection services)
+ {
+	services.AddDbContext<MusicStoreContext>(options =>
+ 		options.UseSqlServer(Configuration.GetConnectionString("MusicStoreContext")));
+	services.AddMvc();
+}
+
+**Create DB by using migrations
+=> Tools –> NuGet Package Manager –> Package Manager Console
+Run "Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 2.0.2"
+Run "Install-Package Microsoft.EntityFrameworkCore.Tools"
+***NOTE : Put "ConnectionString" in appsettings.json on the TOP else Error
+Run "Add-Migration InitialCreate"
+Run "Update-Database" to apply the new migration to the database.
+
+**Insert data into DB : Create folder "Data" => Create class "SeedData.cs"
+public static void Initialize(IServiceProvider serviceProvider)
+        {
+            using (var context = new MvcMovieContext(
+                serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
+            {
+                // Look for any movies.
+                if (context.Movie.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                context.Movie.AddRange(
+                     new Movie
+                     {
+                         Title = "When Harry Met Sally",
+                         ReleaseDate = DateTime.Parse("1989-1-11"),
+                         Genre = "Romantic Comedy",
+                         Price = 7.99M
+                     },
+
+                     new Movie
+                     {
+                         Title = "Ghostbusters ",
+                         ReleaseDate = DateTime.Parse("1984-3-13"),
+                         Genre = "Comedy",
+                         Price = 8.99M
+                     }
+                );
+                context.SaveChanges();
+            }
+        }
+**Add the SEED initializer in "Program.cs"
+public static void Main(string[] args)
+        {
+            var host = BuildWebHost(args);
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    // Requires using MvcMovie.Models;
+                    SeedData.Initialize(services);
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred seeding the DB.");
+                }
+            }
+
+            host.Run();
+        }
