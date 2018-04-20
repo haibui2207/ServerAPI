@@ -6,7 +6,7 @@
 # > SETUP SQL <br/>
 
 ----------
-## Step 1 : Insert EntityCoreFramework and build Database
+## Step 1 : Install EntityCoreFramework and build Database
 Open Tools => NuGet Package Manager => Package Manager Console
 - Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 2.0.2
 - Install-Package Microsoft.EntityFrameworkCore.Tools
