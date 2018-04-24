@@ -33,7 +33,9 @@ namespace ServerAPI.Models.UserModel
         {
             try
             {
-                var user = _context.Users.Single(item => item.name == removeUser.name && item.RFID == removeUser.RFID);
+                var user = _context.Users.Single(item => 
+                    item.name == removeUser.name && 
+                    item.RFID == removeUser.RFID);
                 _context.Users.Remove(user);
                 _context.SaveChanges();
 

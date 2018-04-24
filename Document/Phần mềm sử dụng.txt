@@ -1,0 +1,4 @@
+- Ngrok 		https://ngrok.com/download
+- PostMan 		https://www.getpostman.com/apps
+- Arduino IDE 		https://www.arduino.cc/en/main/software
+- Visual Studio 2017 	dreamspark
