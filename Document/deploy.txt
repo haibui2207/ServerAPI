@@ -3,6 +3,7 @@
 **on win server 
 	https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?tabs=aspnetcore2x
 	https://ducnt.edu.vn/2017/12/05/huong-dan-lap-trinh-asp-net-core-bai-5-trien-khai-web-len-iis/
+	https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-2.1&tabs=aspnetcore2x
 **on centos nginx
 	https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache?tabs=aspnetcore2x
 **heroku
