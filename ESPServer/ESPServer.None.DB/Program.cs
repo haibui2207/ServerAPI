@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ESPServer_None_DB
+namespace ESPServer.None.DB
 {
     public class Program
     {

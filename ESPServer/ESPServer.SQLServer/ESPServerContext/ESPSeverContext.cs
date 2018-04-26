@@ -1,8 +1,8 @@
-﻿using ESPServer_with_SQL_Server.Models;
-using ESPServer_with_SQL_Server.Models.UserModel;
+﻿using ESPServer.SQLServer.Models;
+using ESPServer.SQLServer.Models.UserModel;
 using Microsoft.EntityFrameworkCore;
 
-namespace ESPServer_with_SQL_Server.ESPServerContext
+namespace ESPServer.SQLServer.ESPServerContext
 {
     public class ESPSeverContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿namespace ESPServer_None_DB.Models.UserModel
+﻿namespace ESPServer.None.DB.Models.UserModel
 {
     interface IUserRepo
     {

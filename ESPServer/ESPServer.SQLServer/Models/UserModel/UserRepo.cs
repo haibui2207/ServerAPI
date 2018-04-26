@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ESPServer_with_SQL_Server.ESPServerContext;
+using ESPServer.SQLServer.ESPServerContext;
 
-namespace ESPServer_with_SQL_Server.Models.UserModel
+namespace ESPServer.SQLServer.Models.UserModel
 {
     public class UserRepo : IUserRepo
     {

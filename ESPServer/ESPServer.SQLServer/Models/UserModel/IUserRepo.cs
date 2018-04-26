@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace ESPServer_with_SQL_Server.Models.UserModel
+namespace ESPServer.SQLServer.Models.UserModel
 {
     interface IUserRepo
     {

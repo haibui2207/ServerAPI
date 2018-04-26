@@ -1,11 +1,11 @@
 ﻿using System;
-using ESPServer_with_SQL_Server.Data;
+using ESPServer.SQLServer.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ESPServer_with_SQL_Server
+namespace ESPServer.SQLServer
 {
     public class Program
     {

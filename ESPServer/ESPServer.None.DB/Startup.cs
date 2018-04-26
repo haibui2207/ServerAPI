@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ESPServer_None_DB
+namespace ESPServer.None.DB
 {
     public class Startup
     {

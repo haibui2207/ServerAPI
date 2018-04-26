@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ESPServer_with_SQL_Server.Models
+namespace ESPServer.SQLServer.Models
 {
     interface IPinRepo
     {

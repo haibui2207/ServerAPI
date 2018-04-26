@@ -1,8 +1,8 @@
 ﻿using System;
-using ESPServer_None_DB.Models.UserModel;
+using ESPServer.None.DB.Models.UserModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ESPServer_None_DB.Controllers
+namespace ESPServer.None.DB.Controllers
 {
     [Produces("application/json")]
     [Route("api/User")]

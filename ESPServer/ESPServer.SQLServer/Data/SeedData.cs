@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using ESPServer_with_SQL_Server.ESPServerContext;
-using ESPServer_with_SQL_Server.Models;
-using ESPServer_with_SQL_Server.Models.UserModel;
+using ESPServer.SQLServer.ESPServerContext;
+using ESPServer.SQLServer.Models;
+using ESPServer.SQLServer.Models.UserModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ESPServer_with_SQL_Server.Data
+namespace ESPServer.SQLServer.Data
 {
     public class SeedData
     {

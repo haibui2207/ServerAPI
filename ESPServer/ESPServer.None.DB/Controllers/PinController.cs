@@ -1,10 +1,10 @@
 ﻿using System;
-using ESPServer_None_DB.Models;
+using ESPServer.None.DB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ESPServer_None_DB.Controllers
+namespace ESPServer.None.DB.Controllers
 {
     [Produces("application/json")]
     [Route("api/pin")]

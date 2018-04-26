@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace ESPServerwithSQLServer.Migrations
+namespace ESPServer.SQLServer.Migrations
 {
     public partial class InitialCreate : Migration
     {

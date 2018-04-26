@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ESPServer_None_DB.Models
+namespace ESPServer.None.DB.Models
 {
     public class PinRepo : IPinRepo
     {

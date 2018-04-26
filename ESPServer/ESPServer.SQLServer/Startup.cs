@@ -1,11 +1,11 @@
-﻿using ESPServer_with_SQL_Server.ESPServerContext;
+﻿using ESPServer.SQLServer.ESPServerContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ESPServer_with_SQL_Server
+namespace ESPServer.SQLServer
 {
     public class Startup
     {

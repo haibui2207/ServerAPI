@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ESPServer_with_SQL_Server.ESPServerContext;
-using ESPServer_with_SQL_Server.Models.UserModel;
+using ESPServer.SQLServer.ESPServerContext;
+using ESPServer.SQLServer.Models.UserModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ESPServer_with_SQL_Server.Controllers
+namespace ESPServer.SQLServer.Controllers
 {
     [Produces("application/json")]
     [Route("api/User")]

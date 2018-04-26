@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ESPServer_with_SQL_Server.ESPServerContext;
+using ESPServer.SQLServer.ESPServerContext;
 
-namespace ESPServer_with_SQL_Server.Models
+namespace ESPServer.SQLServer.Models
 {
     public class PinRepo : IPinRepo
     {
