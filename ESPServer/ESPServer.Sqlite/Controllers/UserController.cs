@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ESPServer.SQLServer.Context;
-using ESPServer.SQLServer.Models.UserModel;
+using ESPServer.Sqlite.Context;
+using ESPServer.Sqlite.Models.UserModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ESPServer.SQLServer.Controllers
+namespace ESPServer.Sqlite.Controllers
 {
     [Produces("application/json")]
     [Route("api/User")]
@@ -12,7 +12,7 @@ namespace ESPServer.SQLServer.Controllers
     {
         private readonly IUserRepo _repository;
 
-        public UserController(ESPSeverContext context)
+        public UserController(ESPServerContext context)
         {
             this._repository = new UserRepo(context);
         }

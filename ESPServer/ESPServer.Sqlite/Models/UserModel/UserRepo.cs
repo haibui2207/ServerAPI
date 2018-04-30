@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ESPServer.SQLServer.Context;
+using ESPServer.Sqlite.Context;
 
-namespace ESPServer.SQLServer.Models.UserModel
+namespace ESPServer.Sqlite.Models.UserModel
 {
     public class UserRepo : IUserRepo
     {
-        private readonly ESPSeverContext _context;
+        private readonly ESPServerContext _context;
 
-        public UserRepo(ESPSeverContext context)
+        public UserRepo(ESPServerContext context)
         {
             this._context = context;
         }

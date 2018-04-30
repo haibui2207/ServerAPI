@@ -2,7 +2,7 @@
 using ESPServer.SQLServer.Models.UserModel;
 using Microsoft.EntityFrameworkCore;
 
-namespace ESPServer.SQLServer.ESPServerContext
+namespace ESPServer.SQLServer.Context
 {
     public class ESPSeverContext : DbContext
     {

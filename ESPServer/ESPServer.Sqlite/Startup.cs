@@ -1,11 +1,11 @@
-﻿using ESPServer.SQLServer.Context;
+﻿using ESPServer.Sqlite.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ESPServer.SQLServer
+namespace ESPServer.Sqlite
 {
     public class Startup
     {
@@ -19,19 +19,10 @@ namespace ESPServer.SQLServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ESPSeverContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("ESPServerContext")));
-
             services.AddMvc();
-            //add CORS to fix Access-Control Allow Origin
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
-            });
+
+            services.AddDbContext<ESPServerContext>(options =>
+                 options.UseSqlite("Data Source=ESPServer.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,14 +33,15 @@ namespace ESPServer.SQLServer
                 app.UseDeveloperExceptionPage();
             }
 
-            //add CORS
-            app.UseCors("CorsPolicy");
-
-            // Shows UseCors with CorsPolicyBuilder.
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:4200"));
-
             app.UseMvc();
+
+            //Config Sqlite on Azure
+            var serviceScopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            using (var serviceScope = serviceScopeFactory.CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetService<ESPServerContext>();
+                dbContext.Database.EnsureCreated();
+            }
         }
     }
 }

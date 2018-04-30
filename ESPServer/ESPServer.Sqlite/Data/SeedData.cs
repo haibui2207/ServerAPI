@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Linq;
-using ESPServer.SQLServer.Context;
-using ESPServer.SQLServer.Models;
-using ESPServer.SQLServer.Models.UserModel;
+using ESPServer.Sqlite.Context;
+using ESPServer.Sqlite.Models;
+using ESPServer.Sqlite.Models.UserModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ESPServer.SQLServer.Data
+namespace ESPServer.Sqlite.Data
 {
     public class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new ESPSeverContext(
-                serviceProvider.GetRequiredService<DbContextOptions<ESPSeverContext>>()))
+            using (var context = new ESPServerContext(
+                serviceProvider.GetRequiredService<DbContextOptions<ESPServerContext>>()))
             {
                 if (context.Pins.Any() && context.Users.Any()) // If Data none Empty , return
                 {

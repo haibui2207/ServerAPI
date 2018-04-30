@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ESPServer.SQLServer.Context;
-using ESPServer.SQLServer.Models;
+using ESPServer.Sqlite.Context;
+using ESPServer.Sqlite.Models;
 using Microsoft.AspNetCore.Mvc;
 
 //For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ESPServer.SQLServer.Controllers
+namespace ESPServer.Sqlite.Controllers
 {
     [Produces("application/json")]
     [Route("api/pin")]
@@ -14,7 +14,7 @@ namespace ESPServer.SQLServer.Controllers
     {
         private readonly IPinRepo _repository;
 
-        public PinController(ESPSeverContext context)
+        public PinController(ESPServerContext context)
         {
             this._repository = new PinRepo(context);
         }

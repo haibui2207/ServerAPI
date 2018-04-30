@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ESPServer.SQLServer.Context;
+using ESPServer.Sqlite.Context;
 
-namespace ESPServer.SQLServer.Models
+namespace ESPServer.Sqlite.Models
 {
     public class PinRepo : IPinRepo
     {
-        private readonly ESPSeverContext _context;
+        private readonly ESPServerContext _context;
 
-        public PinRepo(ESPSeverContext context)
+        public PinRepo(ESPServerContext context)
         {
             this._context = context;
         }
