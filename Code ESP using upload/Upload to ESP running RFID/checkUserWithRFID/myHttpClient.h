@@ -93,6 +93,29 @@ JsonObject& getIndexAtJsonArray(String data , int index){
   return obj;
 }
 
+JsonObject& getPinInJsonArray(String data , int pin){
+  int len = data.length() + 1;
+  int i = 0;
+  char buf[len];
+  data.toCharArray(buf, len);   
+  
+  const size_t bufferSize = JSON_ARRAY_SIZE(20) + 20*JSON_OBJECT_SIZE(2);
+  DynamicJsonBuffer jsonBuffer(bufferSize);
+  JsonArray& root = jsonBuffer.parseArray(data);  
+  //check parse
+  if (!root.success()) Serial.println("parseObject() failed");
+  int rootLength = root.measureLength();
+  int pinSelected;
+  Serial.println(rootLength);
+  for(i; i < rootLength ; i++ ){
+    pinSelected = root[i]["pin"];
+    if(pinSelected == pin) break;
+  }
+  JsonObject& obj = root[i];
+  obj.prettyPrintTo(Serial);
+  return obj;
+}
+
 /************************************************GET DATA************************************************/
 String getHttpRespone(String URL){
   String data; 

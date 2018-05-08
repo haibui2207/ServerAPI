@@ -50,9 +50,9 @@ void loop() {
   {       
     String data = getHttpRespone(host);
     Serial.println(data);
-    JsonObject& reponse_pin4 = getIndexAtJsonArray(data , haibui_pin4 - 1);  //Array from 0 so -1
-    JsonObject& reponse_pin14 = getIndexAtJsonArray(data , trungduyen_pin14 - 1); 
-    JsonObject& reponse_servo_pin = getIndexAtJsonArray(data , SERVO_PIN - 1); 
+    JsonObject& reponse_pin4 = getPinInJsonArray(data , haibui_pin4);
+    JsonObject& reponse_pin14 = getPinInJsonArray(data , trungduyen_pin14); 
+    JsonObject& reponse_servo_pin = getPinInJsonArray(data , SERVO_PIN); 
     
     int state_pin4 = reponse_pin4["state"];
     int state_pin14 = reponse_pin14["state"];
