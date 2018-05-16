@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ESPServerSQLServer" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\Đồ\ án\ chuyên\ ngành\ -\ khóa\ luận\ tốt\ nghiệp\\Code\\ESPServer\\ESPServer\.SQLServer\\obj\\Release\\netcoreapp2\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

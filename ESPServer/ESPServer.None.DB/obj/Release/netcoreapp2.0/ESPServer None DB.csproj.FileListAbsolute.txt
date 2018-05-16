@@ -1,0 +1,11 @@
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\bin\Release\netcoreapp2.0\ESPServer None DB.deps.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\bin\Release\netcoreapp2.0\ESPServer None DB.runtimeconfig.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\bin\Release\netcoreapp2.0\ESPServer None DB.runtimeconfig.dev.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\bin\Release\netcoreapp2.0\ESPServer None DB.dll
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\bin\Release\netcoreapp2.0\ESPServer None DB.pdb
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.csprojResolveAssemblyReference.cache
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.csproj.CoreCompileInputs.cache
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.AssemblyInfoInputs.cache
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.AssemblyInfo.cs
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.dll
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer None DB\obj\Release\netcoreapp2.0\ESPServer None DB.pdb

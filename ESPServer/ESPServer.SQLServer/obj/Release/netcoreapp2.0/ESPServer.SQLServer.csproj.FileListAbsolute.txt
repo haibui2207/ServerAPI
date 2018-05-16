@@ -1,0 +1,11 @@
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\bin\Release\netcoreapp2.0\ESPServer.SQLServer.deps.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\bin\Release\netcoreapp2.0\ESPServer.SQLServer.runtimeconfig.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\bin\Release\netcoreapp2.0\ESPServer.SQLServer.runtimeconfig.dev.json
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\bin\Release\netcoreapp2.0\ESPServer.SQLServer.dll
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\bin\Release\netcoreapp2.0\ESPServer.SQLServer.pdb
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.csproj.CoreCompileInputs.cache
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.AssemblyInfoInputs.cache
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.AssemblyInfo.cs
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.dll
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.pdb
+F:\Đồ án chuyên ngành - khóa luận tốt nghiệp\Code\ESPServer\ESPServer.SQLServer\obj\Release\netcoreapp2.0\ESPServer.SQLServer.csprojAssemblyReference.cache
