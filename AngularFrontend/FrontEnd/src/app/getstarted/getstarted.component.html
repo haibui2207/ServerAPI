@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row phone rubberBand ">
+        <div class="listinput">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01" [ngSwitch]="currentState">
+                        <div *ngSwitchCase="'1'" class="led-green-on"></div>
+                        <div *ngSwitchCase="'0'" class="led-green-off"></div>
+                    </label>
+                </div>
+                <select class="custom-select" (change)="getItemSeleted($event)">
+                    <option value="4" selected>Light</option>
+                    <option value="14">Bell</option>
+                    <option value="2">Door</option>
+                </select>
+            </div>
+
+            <input type="button" class="btn btn-success btn3d" value="ON" (click)="turnOn()">
+            <span class="glyphicon glyphicon-ok"></span>
+
+            <input type="button" class="btn btn-danger btn3d" value="OFF" (click)="turnOff()">
+            <span class="glyphicon glyphicon-remove"></span>
+            
+            <input type="button" style="width:100%;" class="btn btn-info btn3d" value="TURN OFF ALL" (click)="turnOffAll()">
+            <span class="glyphicon glyphicon-remove"></span>
+        </div>
+    </div>
+</div>

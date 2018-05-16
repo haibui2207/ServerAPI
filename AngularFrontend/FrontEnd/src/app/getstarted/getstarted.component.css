@@ -1,0 +1,107 @@
+.phone {
+  background-color: aquamarine;
+}
+
+.phone {
+  display: block;
+  position: relative;
+  width: 18.625em;
+  height: 36.75em;
+  margin: 2em auto 0;  
+  border-radius: 43px;
+  background-image: url("../../assets/phone.png");
+}
+
+.listinput {
+  width: 100%;
+  height: 100%;
+  padding: 60% 20%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.listinput input {
+  width: 75px;
+  height: 75px;
+}
+
+.btn3d {
+  position: relative;
+  top: -6px;
+  border: 0;
+  transition: all 40ms linear;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.btn3d:active:focus, .btn3d:focus:hover, .btn3d:focus {
+  -moz-outline-style: none;
+  outline: medium none;
+}
+
+.btn3d:active, .btn3d.active {
+  top: 2px;
+}
+
+.btn3d.btn-success {
+  box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  background-color: #78d739;
+}
+
+.btn3d.btn-success:active, .btn3d.btn-success.active {
+  box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: #78d739;
+}
+
+.btn3d.btn-info {
+  box-shadow: 0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  background-color: #39B3D7;
+}
+
+.btn3d.btn-info:active, .btn3d.btn-info.active {
+  box-shadow: 0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: #39B3D7;
+}
+
+.btn3d.btn-warning {
+  box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  background-color: #FEAF20;
+}
+
+.btn3d.btn-warning:active, .btn3d.btn-warning.active {
+  box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: #FEAF20;
+}
+
+.btn3d.btn-danger {
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+  background-color: #D73814;
+}
+
+.btn3d.btn-danger:active, .btn3d.btn-danger.active {
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: #D73814;
+}
+
+.led-green-on {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+
+.led-green-off {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: rgb(78, 109, 13);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
